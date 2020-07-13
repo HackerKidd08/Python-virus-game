@@ -4,8 +4,8 @@ import console
 def level1():
     console.clear()
     print("Since this is level 1 i will go easy on you.\nMake a Hello, World! program, for the string use single quotes or '' use print('') and then put your text in the quoates:\n")
-    lvl1code = input("")
-    if lvl1code == "print('Hello, World!')":
+    Level1Code = input("")
+    if Level1Code == "print('Hello, World!')":
         print("Correct")
         console.startConsole(True)
     else:
