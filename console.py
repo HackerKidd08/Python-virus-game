@@ -13,10 +13,10 @@ def clear():
     else:
         os.system('clear')
 
-def successMessage(**args):
+def successMessage(*args):
     print(colorama.Fore.GREEN + ' '.join(args) + colorama.Style.RESET_ALL)
 
-def errorMessage(**args):
+def errorMessage(*args):
     print(colorama.Fore.RED + ' '.join(args) + colorama.Style.RESET_ALL)
 
 def startConsole(helpUnlocked):
@@ -29,7 +29,7 @@ def startConsole(helpUnlocked):
         command = input("root@ROOT-PC:~ ")
         if command == "help":
             if helpUnlocked == False:
-                print("ERROR HELP UNAVAILABLE PLEASE TYPE PLAY TO UNLOCK")
+                errorMessage("ERROR HELP UNAVAILABLE PLEASE TYPE PLAY TO UNLOCK")
                 helpUnlocked = True
             else:
                 for command in commands.keys():
