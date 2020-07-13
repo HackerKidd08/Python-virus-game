@@ -1,12 +1,19 @@
 import os
+import levels
 
 userLevel=1
-import levels
+
+def clear():
+    import platform
+    if platform.system() == 'Windows':
+        os.system('cls')
+    else:
+        os.system('clear')
 
 
 def startConsole(helpUnlocked):
     commands = {'clear':'clear -- clears the console','play':'play -- use play to get closer to the end of the game and unlock more commands'}
-    os.system("clear")
+    clear()
     level = userLevel
     while True:
         command = input("root@ROOT-PC:~ ")
@@ -21,10 +28,11 @@ def startConsole(helpUnlocked):
             if level == 1:
                 levels.level1()
         elif command == "clear":
-            os.system("clear")
+            clear()
         elif command == "quit":
             exit()
 
 
 def increaseLevel():
-    userLevel = userLevel + 1
+    global userLevel
+    userLevel += 1
