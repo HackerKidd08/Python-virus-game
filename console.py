@@ -30,7 +30,6 @@ def startConsole(helpUnlocked):
         if command == "help":
             if helpUnlocked == False:
                 errorMessage("ERROR HELP UNAVAILABLE PLEASE TYPE PLAY TO UNLOCK")
-                helpUnlocked = True
             else:
                 for command in commands.keys():
                     print(commands[command])
