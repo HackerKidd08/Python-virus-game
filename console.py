@@ -1,5 +1,8 @@
 import os
 import levels
+import colorama
+
+colorama.init()
 
 userLevel=1
 
@@ -10,9 +13,16 @@ def clear():
     else:
         os.system('clear')
 
+def successMessage(**args):
+    print(colorama.Fore.GREEN + ' '.join(args) + colorama.Style.RESET_ALL)
+
+def errorMessage(**args):
+    print(colorama.Fore.RED + ' '.join(args) + colorama.Style.RESET_ALL)
 
 def startConsole(helpUnlocked):
-    commands = {'clear':'clear -- clears the console','play':'play -- use play to get closer to the end of the game and unlock more commands'}
+    commands = {'clear':'clear -- clears the console',
+    'play':'play -- use play to get closer to the end of the game and unlock more commands'}
+
     clear()
     level = userLevel
     while True:
@@ -31,7 +41,6 @@ def startConsole(helpUnlocked):
             clear()
         elif command == "quit":
             exit()
-
 
 def increaseLevel():
     global userLevel
