@@ -1,14 +1,14 @@
-[
-    {
-        "name":"help",
+{
+    "help": {
         "usage": "help -- prints a list of commands"
     },
-    {
-        "name":"clear",
+    "play": {
+        "usage": "play -- use play to get closer to the end of the game and unlock more commands"
+    },
+    "clear": {
         "usage": "clear -- clears the console"
     },
-    {
-        "name":"play",
-        "usage": "play -- use play to get closer to the end of the game and unlock more commands"
+    "quit": {
+        "usage": "quit -- clears the console"
     }
-]
+}

@@ -1,6 +1,7 @@
 import os
 import levels
 import colorama
+import json
 
 colorama.init()
 
@@ -20,19 +21,19 @@ def errorMessage(*args):
     print(colorama.Fore.RED + ' '.join(args) + colorama.Style.RESET_ALL)
 
 def startConsole(helpUnlocked):
-    commands = {'clear':'clear -- clears the console',
-    'play':'play -- use play to get closer to the end of the game and unlock more commands'}
+    commands = json.load(open('commands.json'))
 
     clear()
     level = userLevel
     while True:
         command = input("root@ROOT-PC:~ ")
+
         if command == "help":
             if helpUnlocked == False:
                 errorMessage("ERROR HELP UNAVAILABLE PLEASE TYPE PLAY TO UNLOCK")
             else:
-                for command in commands.keys():
-                    print(commands[command])
+                for cmd in commands:
+                    print(commands[cmd]["usage"])
         elif command == "play":
             if level == 1:
                 levels.level1()
@@ -42,6 +43,8 @@ def startConsole(helpUnlocked):
             clear()
         elif command == "quit":
             exit()
+        else:
+            errorMessage("Unknown command:", command)
 
 def increaseLevel():
     global userLevel
