@@ -36,11 +36,12 @@ def startConsole(helpUnlocked):
         elif command == "play":
             if level == 1:
                 levels.level1()
+            elif level == 2:
+                levels.level2()
         elif command == "clear":
             clear()
         elif command == "quit":
             exit()
 
 def increaseLevel():
-    global userLevel
     userLevel += 1
