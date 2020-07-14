@@ -3,6 +3,12 @@ import console
 
 prompt = ">>> "
 
+def playLevel(LevelNumber):
+    if LevelNumber == 1:
+        level1()
+    elif LevelNumber == 2:
+        level2()
+
 
 def level1():
     console.clear()
