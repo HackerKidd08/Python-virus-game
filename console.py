@@ -44,4 +44,5 @@ def startConsole(helpUnlocked):
             exit()
 
 def increaseLevel():
+    global userLevel
     userLevel += 1
