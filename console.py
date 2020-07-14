@@ -35,7 +35,10 @@ def startConsole(helpUnlocked):
                 for cmd in commands:
                     print(commands[cmd]["usage"])
         elif command == "play":
-            levels.playLevel(userLevel)
+            if level == 1:
+                levels.level1()
+            elif level == 2:
+                levels.level2()
         elif command == "clear":
             clear()
         elif command == "quit":
@@ -45,6 +48,4 @@ def startConsole(helpUnlocked):
 
 def increaseLevel():
     global userLevel
-    userLevel += 1
-    print(str(userLevel))
     userLevel += 1
