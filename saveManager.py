@@ -1,0 +1,2 @@
+def saveGame():
+    print("Saved")

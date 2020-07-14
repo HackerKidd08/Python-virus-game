@@ -17,4 +17,4 @@ def start():
     print("OH NO WE HAVE BEEN HACKED!")
     print("Its up to you to fix everything and get rid of this virus")
     time.sleep(3)
-    console.startConsole(False)
+    console.startConsole(True)

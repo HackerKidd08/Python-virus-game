@@ -1,14 +1,17 @@
 {
     "help": {
-        "usage": "help -- prints a list of commands"
+        "usage": "help -- Prints a list of commands"
     },
     "play": {
-        "usage": "play -- use play to get closer to the end of the game and unlock more commands"
+        "usage": "play -- Use play to get closer to the end of the game and unlock more commands"
     },
     "clear": {
-        "usage": "clear -- clears the console"
+        "usage": "clear -- Clears the console"
     },
     "quit": {
-        "usage": "quit -- clears the console"
+        "usage": "quit -- Quits the game"
+    },
+    "save": {
+        "usage": "save -- Saves the game"
     }
 }

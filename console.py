@@ -2,6 +2,7 @@ import os
 import levels
 import colorama
 import json
+import saveManager
 
 colorama.init()
 
@@ -43,6 +44,8 @@ def startConsole(helpUnlocked):
             clear()
         elif command == "quit":
             exit()
+        elif command == "save":
+            saveManager.saveGame()
         else:
             errorMessage("Unknown command:", command)
 
