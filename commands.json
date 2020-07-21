@@ -13,5 +13,8 @@
     },
     "save": {
         "usage": "save -- Saves the game"
+    },
+    "virushealth": {
+        "usage": "virushealth -- Shows you the virus' health"
     }
 }

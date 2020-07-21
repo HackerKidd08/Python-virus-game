@@ -11,7 +11,7 @@ def level1():
     Level1Code = input(prompt)
     if Level1Code == "print('Hello, World!')":
         console.successMessage("Correct!")
-        console.userLevel = 2
+        console.increaseLevel()
         time.sleep(1)
         console.startConsole(True)
     else:
@@ -25,7 +25,7 @@ def level2():
     if Level2Code == "myString = 'This is a string!'":
         console.successMessage("Correct!")
         time.sleep(1)
-        console.userLevel = 3
+        console.increaseLevel()
         console.startConsole(True)
     else:
         console.errorMessage("Try again and check your syntax")
@@ -37,9 +37,13 @@ def level3():
     Level3Code = input(prompt)
     if Level3Code == 'print(myString)':
         print('This is a string!')
-        console.userLevel = 4
+        console.increaseLevel()
         console.successMessage("Correct!")
-    
+    else:
+        console.errorMessage("Wrong! please try again and check your syntax")
+        time.sleep(1)
+        console.clear()
+        level3()
 
 def level4(partNum):
     if partNum == 1:
@@ -79,7 +83,7 @@ def level4(partNum):
            time.sleep(5)
            console.clear()
            console.damageVirus(5)
-           console.userLevel = 5
+           console.increaseLevel()
        else:
            console.errorMessage("Wrong! please check your syntax and try again")
 
