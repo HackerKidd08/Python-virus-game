@@ -22,15 +22,23 @@ def clear():
     else:
         os.system('clear')
 
+def printMessage(*args, color):
+    print(color + ' '.join([str(arg) for arg in args]) + colorama.Style.RESET_ALL)
+
 def successMessage(*args):
-    print(colorama.Fore.GREEN + ' '.join(args) + colorama.Style.RESET_ALL)
+    printMessage(*args, color=colorama.Fore.GREEN)
 
 def errorMessage(*args):
-    print(colorama.Fore.RED + ' '.join(args) + colorama.Style.RESET_ALL)
+    printMessage(*args, color=colorama.Fore.RED)
+
+def helpMessage(*args):
+    printMessage(*args, color=colorama.Fore.BLUE)
+    
 
 def startConsole(helpUnlocked):
-    global userLevel
     global debugMode
+    global userLevel
+
     commands = json.load(open('commands.json'))
 
     clear()
@@ -49,7 +57,7 @@ def startConsole(helpUnlocked):
                 errorMessage("ERROR HELP UNAVAILABLE PLEASE TYPE 'play' TO UNLOCK")
             else:
                 for cmd in commands:
-                    print(commands[cmd]["usage"])
+                    helpMessage(commands[cmd]["usage"])
         elif command == "play":
             if level == 1:
                 levels.level1()
@@ -84,15 +92,22 @@ def startConsole(helpUnlocked):
                 debugMode = True
                 continue
 
+            debug_commands = {"load": "load -- Loads the save.json file",
+                              "setlevel": "setlevel -- Sets your current level"}
+
             if len(args) == 0:
-                errorMessage("Sike! That's the wrong number of arguments")
+                for cmd in debug_commands:
+                    helpMessage(debug_commands[cmd])
             elif len(args) == 1:
                 if args[0] == "load":
                     saveManager.loadGame()
-                elif args[0] == "setlevel":
+            elif len(args) == 2:
+                if args[0] == "setlevel":
+                    print(args)
                     if not args[1].isnumeric():
                         continue
-                    userLevel = int(args[1])
+                    level = int(args[1])
+                    userLevel = level
                     successMessage("User level updated", userLevel)
                     
         else:
