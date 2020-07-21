@@ -1,9 +1,10 @@
 import os
 import time
 import console
+import saveManager
 
 def start():
-    print("Welcome!(Save files coming soon)")
+    print("Welcome!")
     time.sleep(1)
     console.clear()
     time.sleep(0.5)
@@ -16,5 +17,6 @@ def start():
     console.clear()
     print("OH NO WE HAVE BEEN HACKED!")
     print("Its up to you to fix everything and get rid of this virus")
+    saveManager.loadGame()
     time.sleep(3)
     console.startConsole(False)

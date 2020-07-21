@@ -57,7 +57,7 @@ def level4(partNum):
             time.sleep(1)
             console.clear()
             level4(1)
-    if partNum == 2:
+    elif partNum == 2:
         print("To make a float type myFloat = 5.0 notice the decimal point? without the decimal point the variable would just be a integer")
         Level4CodePart2 = input(prompt)
         if Level4CodePart2 == "myFloat = 5.0":
@@ -70,8 +70,8 @@ def level4(partNum):
             time.sleep(1)
             console.clear()
             level4(2)
-    if partNum == 3:
-       print("Make a int(Short for integer) variable called damage and give it a value of 5")
+    elif partNum == 3:
+       print("Make a int (Short for integer) variable called damage and give it a value of 5")
        Level4CodePart3 = input(prompt)
        if Level4CodePart3  == "damage = 5":
            console.successMessage("So the virus was at 100 hp when you started this level.")
@@ -83,5 +83,5 @@ def level4(partNum):
        else:
            console.errorMessage("Wrong! please check your syntax and try again")
 
-    def level5():
-        print("Level 5")
+def level5():
+    print("Level 5")
