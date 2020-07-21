@@ -33,7 +33,7 @@ def errorMessage(*args):
 
 def helpMessage(*args):
     printMessage(*args, color=colorama.Fore.BLUE)
-    
+
 
 def startConsole(helpUnlocked):
     global debugMode
@@ -103,12 +103,11 @@ def startConsole(helpUnlocked):
                     saveManager.loadGame()
             elif len(args) == 2:
                 if args[0] == "setlevel":
-                    print(args)
                     if not args[1].isnumeric():
                         continue
                     level = int(args[1])
                     userLevel = level
-                    successMessage("User level updated", userLevel)
+                    successMessage("User level updated", level)
                     
         else:
             errorMessage("Unknown command:", command)
