@@ -7,6 +7,11 @@ import saveManager
 colorama.init()
 
 userLevel=1
+virushealth=100
+
+def damageVirus(damageAmnt):
+    global virushealth
+    virushealth -= damageAmnt
 
 def clear():
     import platform
@@ -26,8 +31,13 @@ def startConsole(helpUnlocked):
 
     clear()
     level = userLevel
+    print(userLevel)
     while True:
+        if virushealth == 0:
+            print("CONGRATS YOU BEAT THE VIRUS")
+
         command = input("root@ROOT-PC:~ ")
+        
 
         if command == "help":
             if helpUnlocked == False:
@@ -40,12 +50,18 @@ def startConsole(helpUnlocked):
                 levels.level1()
             elif level == 2:
                 levels.level2()
+            elif level == 3:
+                levels.level3()
+            elif level == 4:
+                levels.level4(1)
         elif command == "clear":
             clear()
         elif command == "quit":
             exit()
         elif command == "save":
             saveManager.saveGame()
+        elif command == "virushealth":
+            print(str(virushealth))
         else:
             errorMessage("Unknown command:", command)
 
